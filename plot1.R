@@ -22,14 +22,13 @@ power_cons_data = power_cons_data[power_cons_data$Date %in% c('1/2/2007','2/2/20
 # convert characters to datetime
 power_cons_data$datetime = strptime(paste(power_cons_data$Date,power_cons_data$Time),format="%d/%m/%Y %H:%M:%S")
 
-# Plot data. 
+# Plot data to PNG device. 
+png(filename="plot1.PNG", width = 480, height = 480)
 hist(power_cons_data$Global_active_power, col="red",
      xlab = "Global Active Power (kilowatts)",
      main = "Global Active Power",
-     cex.lab = 0.7,
-     cex.axis = 0.7,
-     cex.main = 0.8)
+     cex.lab = 0.9,
+     cex.main = 1.1
+     )
 
-# Save plot
-dev.copy(png,filename="plot1.PNG", width = 480, height = 480)
 dev.off()
