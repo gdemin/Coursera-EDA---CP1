@@ -15,7 +15,18 @@ unzipped_file = unzip("exdata-data-household_power_consumption.zip")
 # read data
 power_cons_data = read.table(unzipped_file,header=TRUE,sep=";",na.strings = "?")
 
-
-
-
 unlink (unzipped_file) # delete unzipped file
+
+# take subset of dataset
+power_cons_data = power_cons_data[power_cons_data$Date %in% c('1/2/2007','2/2/2007'),]
+
+# Plot data
+# png(filename="plot1.PNG",type = "windows", bg = "transparent",width = 480, height = 480)
+hist(power_cons_data$Global_active_power, col="red",
+     xlab = "Global Active Power (kilowatts)",
+     main = "Global Active Power",
+     bg = "transparent")
+
+# Save plotting
+dev.copy(png,filename="plot1.PNG",type = "windows", bg = "transparent",width = 480, height = 480)
+dev.off ();
