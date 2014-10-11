@@ -25,15 +25,13 @@ power_cons_data$datetime = strptime(paste(power_cons_data$Date,power_cons_data$T
 # Set locale for correct (US) weekdays abbreviation
 Sys.setlocale("LC_TIME", "us")
 
-# Plot data. 
+# Plot data to png device. 
+png(filename="plot2.PNG", width = 480, height = 480)
 plot(power_cons_data$datetime,power_cons_data$Global_active_power,
      type="l",
      xlab = "",
      ylab = "Global Active Power (kilowatts)",
-     cex.lab = 0.7,
-     cex.axis = 0.7,
-     cex.main = 0.8)
+     cex.lab = 0.9
+    )
 
-# Save plot
-dev.copy(png,filename="plot2.PNG", width = 480, height = 480)
 dev.off()
