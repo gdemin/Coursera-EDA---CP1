@@ -1,5 +1,5 @@
 ################################################################################
-### script for building plo1.png from Coursera EDA Course Project 1 ############
+### script for building plot1.png from Coursera EDA Course Project 1 ############
 ################################################################################
 
 # you should change path according to ypur system
@@ -26,11 +26,10 @@ power_cons_data$datetime = strptime(paste(power_cons_data$Date,power_cons_data$T
 hist(power_cons_data$Global_active_power, col="red",
      xlab = "Global Active Power (kilowatts)",
      main = "Global Active Power",
-     cex.lab = 0.75,
-     cex.axis = 0.75,
-     cex.main = 0.85)
+     cex.lab = 0.7,
+     cex.axis = 0.7,
+     cex.main = 0.8)
 
 # Save plot
-dev.copy(png,filename="plot1.PNG", width = 480, height = 480, res=72)
-
+dev.copy(png,filename="plot1.PNG", width = 480, height = 480)
 dev.off()
