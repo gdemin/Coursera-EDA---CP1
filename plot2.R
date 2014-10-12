@@ -26,7 +26,7 @@ power_cons_data$datetime = strptime(paste(power_cons_data$Date,power_cons_data$T
 Sys.setlocale("LC_TIME", "us")
 
 # Plot data to png device. 
-png(filename="plot2.PNG", width = 480, height = 480)
+png(filename="plot2.png", width = 480, height = 480)
 plot(power_cons_data$datetime,power_cons_data$Global_active_power,
      type="l",
      xlab = "",

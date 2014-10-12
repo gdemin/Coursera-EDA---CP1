@@ -26,7 +26,7 @@ power_cons_data$datetime = strptime(paste(power_cons_data$Date,power_cons_data$T
 Sys.setlocale("LC_TIME", "us")
 
 # Plot data on png device to avoid legend cut-off. 
-png(filename="plot3.PNG", width = 480, height = 480)
+png(filename="plot3.png", width = 480, height = 480)
 plot(power_cons_data$datetime,power_cons_data$Sub_metering_1,
      type="l",
      xlab = "",

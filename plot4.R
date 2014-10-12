@@ -26,7 +26,7 @@ power_cons_data$datetime = strptime(paste(power_cons_data$Date,power_cons_data$T
 Sys.setlocale("LC_TIME", "us")
 
 # Plot data on png device to avoid legend cut-off. 
-png(filename="plot4.PNG", width = 480, height = 480)
+png(filename="plot4.png", width = 480, height = 480)
 
 # Change graphics parameter for 4 plots on single window.
 par(mfrow=c(2,2))
